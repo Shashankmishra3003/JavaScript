@@ -20,7 +20,6 @@ console.log('Hello World!!');
 
  var str = 'I am a "double" quoted string';
  console.log(str);
-
  /*
  \'
  \"
@@ -742,4 +741,59 @@ temp = thermos.temperature;
 console.log("New Temp: "+ temp);
 
 
- 
+ //================================== Classes =============================================
+
+ /*
+ * Implement a Polygon class with the following properties:
+ * 1. A constructor that takes an array of integer side lengths.
+ * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.
+ */
+class Polygon {
+    constructor (sides){   // sides is an array 
+        this._sides = sides;
+    }
+
+    perimeter(){
+        let perimeter = 0
+        for(let i = 0; i < this._sides.length; i++){
+            perimeter += this._sides[i];
+        }
+        return perimeter;
+    }
+}
+
+const rectangle = new Polygon([10, 20, 10, 20]);
+console.log( "Area of Polygon is: " + rectangle.perimeter());
+
+// ================================== Extended Functional class ============================
+//create a method for a class outside class declaration;
+
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
+/*
+ *  code that adds an 'area' method to the Rectangle class' prototype
+ */
+Rectangle.prototype.area = function(){
+    return this.w * this.h;
+}
+
+//=================================== Inheritance ==============================================
+// Square extends Rectangle and initializes sides.
+class Square extends Rectangle{
+    constructor(s){
+        super(s); // super needed to access the parent class members.
+        this.w = s;
+        this.h = s;
+    }
+}
+
+const rec = new Rectangle(3, 4);
+const sqr = new Square(3);
+
+console.log("Area of Base class rectangle: " + rec.area());
+console.log("Area of derived class Square: " + sqr.area());
