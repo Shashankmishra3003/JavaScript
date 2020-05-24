@@ -626,6 +626,7 @@ const greetings = `Hello my name is ${person.name}!
 
 console.log(greetings);
 
+
 //====================================== Exercise =========================================================
 
 const resultObj = {
@@ -645,6 +646,26 @@ function makeList(arr){
 
 const resultDisplayArray = makeList(resultObj.failure);
 console.log(resultDisplayArray);
+
+
+//Tagged Template Literals:
+
+var a1 = 5;
+var b1 = 10;
+
+function foo(strings, ...values) {
+    console.log("." + strings[0] + ".");
+    console.log("." + strings[1] + ".");
+    console.log("." + strings[2] + ".");
+    console.log(values[0]);
+    console.log(values[1]);
+    console.log(values[2]);
+}
+
+foo`Sum is ${a1 + b1}
+Product is ${a1 * b1}
+Division is ${b1 / a1}`;
+
 
 // ===================================ES6=========================================================================
 
